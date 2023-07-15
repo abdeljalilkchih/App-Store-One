@@ -1,0 +1,39 @@
+name: app_store_1
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: '>=3.1.0-213.0.dev <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  # Icon
+  cupertino_icons: ^1.0.2
+  # UI Responsive
+  flutter_screenutil: ^5.8.4
+  # Font Family
+  google_fonts: ^5.1.0
+  # svg
+  flutter_svg: ^2.0.7
+  # language
+  easy_localization: ^3.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/lang/
+    # assets fonts
+fonts:
+  - family: start
+    fonts:
+      - asset: assets/fonts/start.ttf
+  - family: parisienne
+    fonts:
+      - asset: assets/fonts/parisienne.ttf
+              
