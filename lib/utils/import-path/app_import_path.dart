@@ -14,7 +14,7 @@ part '../../view/home/body.dart';
 
 // part Widgets
 part '../../widgets/appbar_home.dart';
-part '../../widgets/drawer_home.dart';
+part '../../widgets/drawer/drawer_home.dart';
 part '../../widgets/tab_appbar_home.dart';
 part '../../widgets/images/widget_images.dart';
 

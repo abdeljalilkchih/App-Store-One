@@ -13,12 +13,15 @@ class MyTabAppBarHome extends StatelessWidget {
         SvgPicture.asset(
           myIcon,
           width: (MyAppdime.xl / 1.4).w,
-          // colorFilter: ColorFilter.mode(
-          //   MyAppTheme.isMyDark(context)
-          //       ? MyAppColors.bgWhite
-          //       : MyAppColors.bgBlack,
-          //   BlendMode.difference,
-          // ),
+
+          /// dart ```
+          /// colorFilter: ColorFilter.mode(
+          ///   MyAppTheme.isMyDark(context)
+          ///       ? MyAppColors.bgWhite
+          ///       : MyAppColors.bgBlack,
+          ///   BlendMode.difference,
+          /// ),
+          /// ```
         ),
         MyAppdime.md.horizontalSpace,
         // title tab
