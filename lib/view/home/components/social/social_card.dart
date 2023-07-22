@@ -10,7 +10,7 @@ class MySocialCard extends StatelessWidget {
       footer: Card(
           color: MyAppColors.blackCardSocial,
           child: Padding(
-            padding: EdgeInsets.all(MyAppdime.sm.w),
+            padding: EdgeInsets.all(MyAppDime.sm.w),
             child: Row(
               children: [
                 // Title App

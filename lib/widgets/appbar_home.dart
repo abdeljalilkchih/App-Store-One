@@ -8,7 +8,8 @@ class MyAppBarHome extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       // foregroundColor: Colors.black,
       // backgroundColor: Colors.white,
-      title: Text('appName'.tr(), style: GoogleFonts.racingSansOne()),
+      title:
+          Text(MyAppLangKey.appName.tr(), style: GoogleFonts.racingSansOne()),
       actions: [
         IconButton(
           onPressed: () {
@@ -16,8 +17,8 @@ class MyAppBarHome extends StatelessWidget implements PreferredSizeWidget {
           },
           icon: SvgPicture.asset(
             MyAppMedia.myApp,
-            width: MyAppdime.xl.w,
-            height: MyAppdime.xl.h,
+            width: MyAppDime.xl.w,
+            height: MyAppDime.xl.h,
             semanticsLabel: 'My App Bar',
           ),
         ),

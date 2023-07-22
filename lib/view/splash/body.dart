@@ -25,7 +25,7 @@ class _MySplashPageState extends State<MySplashPage> {
       body: Center(
           child: Image(
         image: const AssetImage(MyAppMedia.appIconLight),
-        width: MediaQuery.of(context).size.width / MyAppdime.xs,
+        width: MediaQuery.of(context).size.width / MyAppDime.xs,
       )),
     );
   }

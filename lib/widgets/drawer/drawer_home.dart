@@ -5,6 +5,20 @@ class MyDrawerHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Drawer();
+    return Drawer(
+        child: Column(
+      children: [
+        //header
+        const MyDrawerHeaderHome(),
+        // spacing  8 height
+        MyAppDime.md.verticalSpace,
+        // line
+        Divider(color: MyAppColors.bgGrey, height: 0),
+        // spacing  16 height
+        MyAppDime.l.verticalSpace,
+        //Settings
+        const MyDrawerSetting(),
+      ],
+    ));
   }
 }

@@ -1,6 +1,6 @@
 part of '../../utils/import-path/app_import_path.dart';
 
-class MyAppdime {
+class MyAppDime {
   static const double _base = 2;
 
   /// [xs] = `2.0`

@@ -12,23 +12,23 @@ class MyTabAppBarHome extends StatelessWidget {
         // svg icon tab
         SvgPicture.asset(
           myIcon,
-          width: (MyAppdime.xl / 1.4).w,
+          width: (MyAppDime.xl / 1.4).w,
 
           /// dart ```
-          /// colorFilter: ColorFilter.mode(
-          ///   MyAppTheme.isMyDark(context)
-          ///       ? MyAppColors.bgWhite
-          ///       : MyAppColors.bgBlack,
-          ///   BlendMode.difference,
+          ///  colorFilter: ColorFilter.mode(
+          ///    MyAppTheme.isMyDark(context)
+          ///        ? MyAppColors.bgWhite
+          ///        : MyAppColors.bgBlack,
+          ///    BlendMode.difference,
           /// ),
           /// ```
         ),
-        MyAppdime.md.horizontalSpace,
+        MyAppDime.md.horizontalSpace,
         // title tab
         Text(
           myTitle,
           style: GoogleFonts.aBeeZee(
-              fontSize: MyAppdime.l.spMin, fontWeight: FontWeight.bold),
+              fontSize: MyAppDime.l.spMin, fontWeight: FontWeight.bold),
         )
       ],
     );
