@@ -4,5 +4,9 @@ List<SingleChildWidget> kProviderMyList = [
   // theme
   ChangeNotifierProvider(
     create: (_) => ControllerMyTheme(),
+  ),
+  // Lang
+  ChangeNotifierProvider(
+    create: (_) => MyControllerLanguage(),
   )
 ];

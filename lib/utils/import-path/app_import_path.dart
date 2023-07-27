@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,6 +12,7 @@ import 'dart:developer' as dev;
 
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 // part pages
 part '../../view/splash/body.dart';
 part '../../view/home/body.dart';
@@ -29,6 +31,7 @@ part '../../widgets/drawer/settings/drawer_setting_lang.dart';
 
 // part controller
 part '../../controllers/c_theme.dart';
+part '../../controllers/c_language.dart';
 
 // part start app
 part '../../start-app/start_app.dart';
@@ -43,7 +46,7 @@ part '../theme/app_colors.dart';
 part '../theme/app_theme.dart';
 part '../language/app_lang.dart';
 part '../language/app_lang_key.dart';
-
+part '../restart/app_restart.dart';
 // part components
 part '../../view/home/components/social/social_card.dart';
 part '../../view/home/components/social/social_gridview.dart';

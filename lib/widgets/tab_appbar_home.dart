@@ -13,21 +13,18 @@ class MyTabAppBarHome extends StatelessWidget {
         SvgPicture.asset(
           myIcon,
           width: (MyAppDime.xl / 1.4).w,
-
-          /// dart ```
-          ///  colorFilter: ColorFilter.mode(
-          ///    MyAppTheme.isMyDark(context)
-          ///        ? MyAppColors.bgWhite
-          ///        : MyAppColors.bgBlack,
-          ///    BlendMode.difference,
-          /// ),
-          /// ```
+          colorFilter: ColorFilter.mode(
+            MyAppTheme.isMyDark(context)
+                ? MyAppColors.bgWhite
+                : MyAppColors.bgBlack,
+            BlendMode.srcIn,
+          ),
         ),
         MyAppDime.md.horizontalSpace,
         // title tab
         Text(
           myTitle,
-          style: GoogleFonts.aBeeZee(
+          style: GoogleFonts.racingSansOne(
               fontSize: MyAppDime.l.spMin, fontWeight: FontWeight.bold),
         )
       ],

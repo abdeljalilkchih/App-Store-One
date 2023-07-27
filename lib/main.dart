@@ -12,7 +12,9 @@ void main() async {
       supportedLocales: MyAppLangConfig.mySupportLocale,
       path: MyAppLangConfig.mYpath,
       fallbackLocale: MyAppLangConfig.mYenLocale,
-      child: const MyStoreApp(),
+      child: const MyAppReStartApplication(
+        myChild: MyStoreApp(),
+      ),
     ),
   );
 }

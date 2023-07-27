@@ -7,7 +7,7 @@ class MyDrawerSettingTheme extends StatelessWidget {
   Widget build(BuildContext context) {
     ControllerMyTheme myProviderTheme = Provider.of<ControllerMyTheme>(context);
     return Switch(
-        value: myProviderTheme.mySwitchTheme,
+        value: myProviderTheme.switchMyTheme,
         onChanged: myProviderTheme.changeMyTheme);
   }
 }

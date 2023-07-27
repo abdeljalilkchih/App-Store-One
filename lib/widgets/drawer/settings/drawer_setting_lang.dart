@@ -8,21 +8,31 @@ class MyDrawerSettingLang extends StatefulWidget {
 }
 
 class _MyDrawerSettingLang extends State<MyDrawerSettingLang> {
-  String selectedLang = mYkEng;
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, () {
+      /// provider lang
+      MyControllerLanguage pMyLang =
+          Provider.of<MyControllerLanguage>(context, listen: false);
+
+      /// can access context include initState
+      pMyLang.checkMyLang(context);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    /// provider lang
+    MyControllerLanguage pMyLang = Provider.of<MyControllerLanguage>(context);
     return DropdownButton(
-        value: selectedLang,
-        items: [
-          DropdownMenuItem(
-              value: mYkEng, child: const Text(MyAppLangKey.english).tr()),
-          DropdownMenuItem(
-              value: mYkArb, child: const Text(MyAppLangKey.arabic).tr())
-        ],
-        onChanged: (myValue) {
-          dev.log('value of my choice $myValue');
-          selectedLang = myValue ?? mYkEng;
-          setState(() {});
+        value: pMyLang.myLang,
+        items: pMyLang.myItemLang
+            .map((myLang) => DropdownMenuItem(
+                value: myLang, child: Text(myLang.myNameLang.tr())))
+            .toList(),
+        onChanged: (MyChoiceLang? myValue) {
+          pMyLang.changeMyLang(context, myLang: myValue ?? MyChoiceLang.eng);
         });
   }
 }

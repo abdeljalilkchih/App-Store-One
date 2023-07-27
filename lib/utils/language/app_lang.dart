@@ -12,4 +12,8 @@ class MyAppLangConfig {
   static Locale mYarLocale = const Locale(mYkArb);
   // list locale
   static List<Locale> mySupportLocale = [mYenLocale, mYarLocale];
+
+  /// [myCurrentLang] return `eng` or `arb`
+  static String myCurrentLang(BuildContext context) =>
+      context.locale.languageCode;
 }

@@ -66,11 +66,18 @@ class MyAppTheme {
   static TextStyle? lSmall(BuildContext context) =>
       Theme.of(context).textTheme.labelSmall;
 
-  /// [isMyDark] check choose theme return bool
+  /// [isMyDark] check choice theme return bool
   ///
   /// `true` = Dark
   ///
   /// `false` = Light
   static bool isMyDark(BuildContext context) =>
-      Theme.of(context).brightness == Brightness.light;
+      Theme.of(context).brightness == Brightness.dark;
+
+  /// [brightnessSystem]  return false light if true dark
+  static bool myBrightnessSystem() {
+    Brightness myBrightness =
+        SchedulerBinding.instance.platformDispatcher.platformBrightness;
+    return myBrightness == Brightness.dark;
+  }
 }
