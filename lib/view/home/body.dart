@@ -16,15 +16,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return const DefaultTabController(
       initialIndex: 0,
       length: 2,
       child: Scaffold(
-        appBar: const MyAppBarHome(),
-        drawer: const MyDrawerHome(),
-        body: TabBarView(children: [
-          const MySocialTab(),
-          Container(color: Colors.greenAccent),
+        appBar: MyAppBarHome(),
+        drawer: MyDrawerHome(),
+        body: TabBarView(physics: NeverScrollableScrollPhysics(), children: [
+          MySocialTab(),
+          MyPremiumTab(),
         ]),
       ),
     );

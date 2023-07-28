@@ -19,4 +19,6 @@ class MyAppDime {
   static const double xxxl = xxl * _base; // 128.0
   /// [xxxxl] = `256.0`
   static const double xxxxl = xxxl * _base; // 256.0
+  /// [fullScreen] = `1`
+  static const double fullScreen = 1; //
 }

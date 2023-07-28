@@ -51,3 +51,6 @@ part '../restart/app_restart.dart';
 part '../../view/home/components/social/social_card.dart';
 part '../../view/home/components/social/social_gridview.dart';
 part '../../view/home/components/social/social_tab.dart';
+part '../../view/home/components/premium/premium_tab.dart';
+part '../../view/home/components/premium/premium_card.dart';
+part '../../view/home/components/premium/premium_card_category.dart';
