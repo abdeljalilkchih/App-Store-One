@@ -31,7 +31,7 @@ class MyDrawerSetting extends StatelessWidget {
           MyDrawerSettingDesign(
             myTitle: MyAppLangKey.terms,
             myIcon: MyAppMedia.terms,
-            myOnTap: () {},
+            myOnTap: () => myPageTerms(context),
           ),
           // Logout
           MyDrawerSettingDesign(
@@ -40,5 +40,13 @@ class MyDrawerSetting extends StatelessWidget {
             myOnTap: () {},
           )
         ]));
+  }
+
+  /// [myPageTerms] push webview
+  void myPageTerms(BuildContext context) {
+    MaterialPageRoute<MyWebViewPage> myRoute = MaterialPageRoute(
+        builder: (context) => MyWebViewPage(
+            myTitle: MyAppLangKey.terms, myUrl: MyApiKey.myTermsUrl(context)));
+    Navigator.push(context, myRoute);
   }
 }

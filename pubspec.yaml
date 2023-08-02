@@ -21,6 +21,8 @@ dependencies:
   provider: ^6.0.5
   # save locale data
   shared_preferences: ^2.2.0
+   # webview
+  webview_flutter: ^4.2.2
 
 dev_dependencies:
   flutter_test:

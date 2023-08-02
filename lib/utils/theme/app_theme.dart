@@ -80,4 +80,12 @@ class MyAppTheme {
         SchedulerBinding.instance.platformDispatcher.platformBrightness;
     return myBrightness == Brightness.dark;
   }
+
+  /// [myThemeState] check is state theme when theme dark return keyword `dark` or not return `light`
+  static String myThemeState(context) =>
+      isMyDark(context) ? MyAppLangKey.dark : MyAppLangKey.light;
+
+  /// [myThemeColor] return color depended on theme if theme dart return color `#121212` is  not return `#ffffff`
+  static Color myThemeColor(context) =>
+      isMyDark(context) ? MyAppColors.darkMode : MyAppColors.lightMode;
 }

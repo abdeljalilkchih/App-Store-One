@@ -6,16 +6,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:easy_localization/easy_localization.dart';
-
-// import give alias name
-import 'dart:developer' as dev;
-
+import 'package:webview_flutter/webview_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+// import give alias name
+import 'dart:developer' as dev;
+
 // part pages
 part '../../view/splash/body.dart';
 part '../../view/home/body.dart';
+part '../../view/webview/body.dart';
 
 // part Widgets
 part '../../widgets/appbar_home.dart';
@@ -47,6 +48,14 @@ part '../theme/app_theme.dart';
 part '../language/app_lang.dart';
 part '../language/app_lang_key.dart';
 part '../restart/app_restart.dart';
+
+/// part Api
+part '../../api/api_key.dart';
+
+/// part Model
+part '../../model/social/m_app_social.dart';
+part '../../model/social/m_main_social.dart';
+
 // part components
 part '../../view/home/components/social/social_card.dart';
 part '../../view/home/components/social/social_gridview.dart';
