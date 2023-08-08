@@ -8,5 +8,9 @@ List<SingleChildWidget> kProviderMyList = [
   // Lang
   ChangeNotifierProvider(
     create: (_) => MyControllerLanguage(),
-  )
+  ),
+  // api
+  ChangeNotifierProvider(
+    create: (_) => MyControllerAPI(),
+  ),
 ];

@@ -5,6 +5,9 @@ class MySocialGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// provider myApi
+    List<ModelMyAppSocial> myListData =
+        Provider.of<MyControllerAPI>(context).myDataSocial!.social!;
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
@@ -13,8 +16,10 @@ class MySocialGridView extends StatelessWidget {
         // Vertical
         crossAxisSpacing: 2,
       ),
-      itemCount: 8,
-      itemBuilder: (context, index) => const MySocialCard(),
+      itemCount: myListData.length,
+      itemBuilder: (context, index) => MySocialCard(
+        myData: myListData.elementAt(index),
+      ),
     );
   }
 }

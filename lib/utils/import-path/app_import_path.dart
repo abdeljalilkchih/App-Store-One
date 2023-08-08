@@ -12,6 +12,8 @@ import 'package:provider/single_child_widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // import give alias name
 import 'dart:developer' as dev;
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
 
 // part pages
 part '../../view/splash/body.dart';
@@ -29,10 +31,12 @@ part '../../widgets/drawer/settings/drawer_setting.dart';
 part '../../widgets/drawer/settings/drawer_setting_design.dart';
 part '../../widgets/drawer/settings/drawer_setting_theme.dart';
 part '../../widgets/drawer/settings/drawer_setting_lang.dart';
+part '../../widgets/error/error_text.dart';
 
 // part controller
 part '../../controllers/c_theme.dart';
 part '../../controllers/c_language.dart';
+part '../../controllers/c_api.dart';
 
 // part start app
 part '../../start-app/start_app.dart';
@@ -51,6 +55,8 @@ part '../restart/app_restart.dart';
 
 /// part Api
 part '../../api/api_key.dart';
+part '../../api/api_handle.dart';
+part '../../api/api.dart';
 
 /// part Model
 part '../../model/social/m_app_social.dart';

@@ -1,8 +1,8 @@
 part of '../../../../utils/import-path/app_import_path.dart';
 
 class MySocialCard extends StatelessWidget {
-  const MySocialCard({super.key});
-
+  const MySocialCard({super.key, required this.myData});
+  final ModelMyAppSocial myData;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -18,7 +18,7 @@ class MySocialCard extends StatelessWidget {
                   // Title App
                   Expanded(
                       child: Text(
-                    'Facebook',
+                    '${myData.nameApp}',
                     style: MyAppTheme.tMedium(context)
                         ?.copyWith(color: MyAppColors.bgBlack),
                     maxLines: 1,
@@ -26,7 +26,7 @@ class MySocialCard extends StatelessWidget {
                   )),
                   // Rating text
                   Text(
-                    '4',
+                    '${myData.rating}',
                     style: MyAppTheme.tSmall(context)
                         ?.copyWith(color: MyAppColors.bgBlack),
                   ),
@@ -36,8 +36,9 @@ class MySocialCard extends StatelessWidget {
               ),
             )),
         // base _image
-        child: const Card(
-            child: MyImagesWidget(myImage: MyAppMedia.testImageNetwork2)),
+        child: Card(
+            child: MyImagesWidget(
+                myImage: myData.image ?? MyAppMedia.testImageNetwork2)),
       ),
     );
   }

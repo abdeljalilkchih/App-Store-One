@@ -24,4 +24,10 @@ class MyApiKey {
   /// [myTermsUrl] website load `html`
   static String myTermsUrl(BuildContext context) =>
       'https://gifted-gray-loincloth.cyclic.app/html/${MyAppTheme.myThemeState(context)}/terms';
+
+  /// End Point
+  static const String myBaseApi =
+      'https://gifted-gray-loincloth.cyclic.app/api/';
+  static const String myApiSocial = '/social';
+  static const String myApiPremium = '/premium';
 }
