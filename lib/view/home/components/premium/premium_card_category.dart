@@ -1,8 +1,10 @@
 part of '../../../../utils/import-path/app_import_path.dart';
 
 class MyPremiumCardCategory extends StatelessWidget {
-  const MyPremiumCardCategory({super.key});
-
+  const MyPremiumCardCategory(
+      {super.key, required this.myHeader, required this.myListPremium});
+  final String myHeader;
+  final List<MyModelAppPremium> myListPremium;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,8 +19,8 @@ class MyPremiumCardCategory extends StatelessWidget {
                 width: MyAppDime.fullScreen.sw,
                 padding: EdgeInsets.symmetric(horizontal: MyAppDime.sm.w),
                 child: Text(
-                  MyAppLangKey.games.tr(),
-                  style: MyAppTheme.dSmall(context),
+                  myHeader.tr(),
+                  style: MyAppTheme.hSmall(context),
                 ),
               ),
             ),
@@ -26,9 +28,11 @@ class MyPremiumCardCategory extends StatelessWidget {
             Expanded(
               flex: 5,
               child: ListView.builder(
-                itemCount: 5,
+                itemCount: myListPremium.length,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (_, index) => const MyPremiumCard(),
+                itemBuilder: (_, index) => MyPremiumCard(
+                  myData: myListPremium[index],
+                ),
               ),
             )
           ],

@@ -61,6 +61,9 @@ part '../../api/api.dart';
 /// part Model
 part '../../model/social/m_app_social.dart';
 part '../../model/social/m_main_social.dart';
+part '../../model/premium/m_app_premium.dart';
+part '../../model/premium/m_premium.dart';
+part '../../model/premium/m_main_premium.dart';
 
 // part components
 part '../../view/home/components/social/social_card.dart';

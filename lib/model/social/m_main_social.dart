@@ -38,19 +38,4 @@ class ModelMyMainSocial {
     }
     return data;
   }
-
-  void test1() {
-    List l1 = [1, 5, 6, 7, 8];
-    l1.forEach((item) {
-      dev.log(item);
-    });
-    // [
-    // 4
-    // 8
-    // 9
-    // 10
-    // 11
-    // ]
-    List newList = l1.map((x) => x + 3).toList();
-  }
 }

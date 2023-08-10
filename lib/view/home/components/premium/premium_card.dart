@@ -1,7 +1,8 @@
 part of '../../../../utils/import-path/app_import_path.dart';
 
 class MyPremiumCard extends StatelessWidget {
-  const MyPremiumCard({super.key});
+  const MyPremiumCard({super.key, required this.myData});
+  final MyModelAppPremium myData;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class MyPremiumCard extends StatelessWidget {
             children: [
               //  Image
               MyImagesWidget(
-                myImage: MyAppMedia.testImageNetwork2,
+                myImage: myData.image ?? MyAppMedia.testImageNetwork2,
                 myHeight: 1.sw,
               ),
               // Name Application & Price
@@ -31,7 +32,7 @@ class MyPremiumCard extends StatelessWidget {
                     children: [
                       Expanded(
                           child: Text(
-                        'facebook',
+                        '${myData.nameApp}',
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: MyAppTheme.bLarge(context)
@@ -39,7 +40,7 @@ class MyPremiumCard extends StatelessWidget {
                       )),
                       // price
                       Text(
-                        '10.0 ${MyAppLangKey.jd.tr()}',
+                        '${myData.price} ${MyAppLangKey.jd.tr()}',
                         style: MyAppTheme.bMedium(context)
                             ?.copyWith(color: MyAppColors.bgBlack),
                       )

@@ -24,4 +24,23 @@ class MyControllerAPI extends ChangeNotifier {
     /// update data in UI
     notifyListeners();
   }
+
+  /// [dataPremium] save object from model [MyModelMainPremium]
+  MyModelMainPremium? myDataPremium;
+
+  /// [fetchDataPremium]
+  /// [fetchDataPremium]
+  Future<void> fetchDataPremium(BuildContext context) async {
+    // start loading
+    changeMyLoading = true;
+
+    // storage data from Api
+    myDataPremium = await MyApi().getMyPremium(context);
+
+    // stop loading
+    changeMyLoading = false;
+
+    // update data in UI
+    notifyListeners();
+  }
 }
