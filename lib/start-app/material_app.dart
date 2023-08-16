@@ -34,7 +34,7 @@ class _MyMaterialAppState extends State<MyMaterialApp> {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: const MySplashPage(),
+      home: const MyLoginPage(),
     );
   }
 }

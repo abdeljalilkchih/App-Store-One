@@ -65,9 +65,9 @@ class MyAppLangKey {
   static const String exit = 'exit';
 
   // * Field
-  static const String email = 'email';
-  static const String pass = 'pass';
-  static const String confirmPass = 'confirmPass';
+  static const String email = 'E-Mail';
+  static const String pass = 'Pass';
+  static const String confirmPass = 'ConfirmPass';
 
   // * Account
   static const String notAccount = 'notAccount';

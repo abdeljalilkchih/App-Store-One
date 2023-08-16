@@ -88,4 +88,12 @@ class MyAppTheme {
   /// [myThemeColor] return color depended on theme if theme dart return color `#121212` is  not return `#ffffff`
   static Color myThemeColor(context) =>
       isMyDark(context) ? MyAppColors.darkMode : MyAppColors.lightMode;
+
+  /// [myIconAppTheme] return icon light or icon dart for app
+  static String myIconAppTheme(BuildContext context) =>
+      isMyDark(context) ? MyAppMedia.appIconDark : MyAppMedia.appIconLight;
+
+  /// [myColorAuth] return color for Auth Design
+  static Color myColorAuth(BuildContext context) =>
+      isMyDark(context) ? MyAppColors.bgPink : MyAppColors.bgBlue;
 }

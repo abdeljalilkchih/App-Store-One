@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/scheduler.dart';
@@ -15,10 +16,11 @@ import 'dart:developer' as dev;
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
-// part pages
+// part views
 part '../../view/splash/body.dart';
 part '../../view/home/body.dart';
 part '../../view/webview/body.dart';
+part '../../view/auth/login.dart';
 
 // part Widgets
 part '../../widgets/appbar_home.dart';
@@ -32,6 +34,12 @@ part '../../widgets/drawer/settings/drawer_setting_design.dart';
 part '../../widgets/drawer/settings/drawer_setting_theme.dart';
 part '../../widgets/drawer/settings/drawer_setting_lang.dart';
 part '../../widgets/error/error_text.dart';
+part '../../view/auth/widgets/auth_appbar.dart';
+part '../../view/auth/widgets/auth_button.dart';
+part '../../view/auth/widgets/auth_logo.dart';
+part '../../view/auth/widgets/auth_footer.dart';
+part '../../view/auth/widgets/auth_forget.dart';
+part '../../view/auth/widgets/auth_text_form_field.dart';
 
 // part controller
 part '../../controllers/c_theme.dart';

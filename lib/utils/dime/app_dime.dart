@@ -21,4 +21,6 @@ class MyAppDime {
   static const double xxxxl = xxxl * _base; // 256.0
   /// [fullScreen] = `1`
   static const double fullScreen = 1; //
+  /// [third] = `0.35`
+  static const double third = 0.35;
 }
