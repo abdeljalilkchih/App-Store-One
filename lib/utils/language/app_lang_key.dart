@@ -56,7 +56,8 @@ class MyAppLangKey {
   static const String send = 'send';
   static const String upload = 'upload';
   static const String free = 'free';
-  static const String premium = 'premium';
+  static const String premium = 'Premium';
+  static const String socialMedia = 'Social Media';
 
   // * Logout
   static const String logout = 'logout';

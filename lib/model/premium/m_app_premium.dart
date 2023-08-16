@@ -28,7 +28,7 @@ class MyModelAppPremium {
     this.urlApp,
   });
   MyModelAppPremium.fromJson(Map<String, dynamic> json) {
-    id = json[id];
+    id = json[MyApiKey.id];
     nameApp = json[MyApiKey.nameApp];
     nameCat = json[MyApiKey.nameCat];
     type = json[MyApiKey.type];

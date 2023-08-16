@@ -10,9 +10,7 @@ class MyDrawerHeaderHome extends StatelessWidget {
         bottom: false,
         child: Row(
           children: [
-            SizedBox(
-              width: MyAppDime.l.w,
-            ),
+            MyAppDime.l.horizontalSpace,
             // image profile
             const Expanded(
                 child: MyProfileImage(myImoji: MyAppMedia.imageProfile)),

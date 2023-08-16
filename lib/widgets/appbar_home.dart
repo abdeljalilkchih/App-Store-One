@@ -26,8 +26,10 @@ class MyAppBarHome extends StatelessWidget implements PreferredSizeWidget {
       bottom: const TabBar(
         // labelColor: Colors.black,
         tabs: [
-          MyTabAppBarHome(myIcon: MyAppMedia.social, myTitle: 'Social Media'),
-          MyTabAppBarHome(myIcon: MyAppMedia.premium, myTitle: 'Premium')
+          MyTabAppBarHome(
+              myIcon: MyAppMedia.social, myTitle: MyAppLangKey.socialMedia),
+          MyTabAppBarHome(
+              myIcon: MyAppMedia.premium, myTitle: MyAppLangKey.premium)
         ],
       ),
     );
