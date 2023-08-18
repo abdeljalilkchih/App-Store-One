@@ -96,4 +96,12 @@ class MyAppTheme {
   /// [myColorAuth] return color for Auth Design
   static Color myColorAuth(BuildContext context) =>
       isMyDark(context) ? MyAppColors.bgPink : MyAppColors.bgBlue;
+
+  /// [myBorderErrorTheme] return color for border error
+  static Color myBorderErrorTheme(BuildContext context) =>
+      isMyDark(context) ? Colors.pink : MyAppColors.bgRed;
+
+  /// [myTextErrorTheme] return color for text error
+  static Color myTextErrorTheme(BuildContext context) =>
+      isMyDark(context) ? Colors.pinkAccent : MyAppColors.bgRed;
 }

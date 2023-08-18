@@ -23,4 +23,7 @@ class MyAppDime {
   static const double fullScreen = 1; //
   /// [third] = `0.35`
   static const double third = 0.35;
+
+  /// [spaceAuth] = `16`
+  static Widget spaceAuth = MyAppDime.l.verticalSpace;
 }

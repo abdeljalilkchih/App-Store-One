@@ -25,6 +25,8 @@ dependencies:
   webview_flutter: ^4.2.2
   # http Client 
   http: ^1.1.0
+  # Validate Forms
+  validators: ^3.0.0
 
 dev_dependencies:
   flutter_test:

@@ -34,8 +34,8 @@ class MyAuthButton extends StatelessWidget {
         alignment: AlignmentDirectional.center,
         child: Text(
           myTitle.tr().toUpperCase(),
-          style:
-              MyAppTheme.dSmall(context)?.copyWith(color: MyAppColors.bgWhite),
+          style: MyAppTheme.bLarge(context)?.copyWith(
+              color: MyAppColors.bgWhite, fontWeight: FontWeight.w900),
         ),
       ),
     );

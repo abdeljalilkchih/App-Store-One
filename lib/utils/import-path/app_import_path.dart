@@ -15,12 +15,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:developer' as dev;
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
+import 'package:validators/validators.dart' as validators;
 
 // part views
 part '../../view/splash/body.dart';
 part '../../view/home/body.dart';
 part '../../view/webview/body.dart';
 part '../../view/auth/login.dart';
+part '../../view/auth/forget.dart';
+part '../../view/auth/register.dart';
 
 // part Widgets
 part '../../widgets/appbar_home.dart';
@@ -40,11 +43,14 @@ part '../../view/auth/widgets/auth_logo.dart';
 part '../../view/auth/widgets/auth_footer.dart';
 part '../../view/auth/widgets/auth_forget.dart';
 part '../../view/auth/widgets/auth_text_form_field.dart';
+part '../../view/auth/widgets/auth_email.dart';
+part '../../view/auth/widgets/auth_pass.dart';
 
 // part controller
 part '../../controllers/c_theme.dart';
 part '../../controllers/c_language.dart';
 part '../../controllers/c_api.dart';
+part '../../controllers/c_auth.dart';
 
 // part start app
 part '../../start-app/start_app.dart';
@@ -60,6 +66,7 @@ part '../theme/app_theme.dart';
 part '../language/app_lang.dart';
 part '../language/app_lang_key.dart';
 part '../restart/app_restart.dart';
+part '../validator/app_validator.dart';
 
 /// part Api
 part '../../api/api_key.dart';
@@ -72,6 +79,7 @@ part '../../model/social/m_main_social.dart';
 part '../../model/premium/m_app_premium.dart';
 part '../../model/premium/m_premium.dart';
 part '../../model/premium/m_main_premium.dart';
+part '../../model/auth/m_user_auth.dart';
 
 // part components
 part '../../view/home/components/social/social_card.dart';

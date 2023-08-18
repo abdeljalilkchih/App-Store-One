@@ -13,4 +13,7 @@ List<SingleChildWidget> kProviderMyList = [
   ChangeNotifierProvider(
     create: (_) => MyControllerAPI(),
   ),
+  ChangeNotifierProvider(
+    create: (_) => MyControllerAuth(),
+  ),
 ];

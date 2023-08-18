@@ -10,6 +10,9 @@ class MyAuthForgotPass extends StatelessWidget {
       child: TextButton(
         onPressed: () {
           dev.log('My Navigator to forgot pass');
+          MaterialPageRoute myRoute = MaterialPageRoute(
+              builder: (context) => const MyForgetPagePassword());
+          Navigator.push(context, myRoute);
         },
         child: Text(
           MyAppLangKey.forgotPass.tr(),
