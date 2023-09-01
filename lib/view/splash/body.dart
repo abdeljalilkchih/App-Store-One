@@ -12,10 +12,11 @@ class _MySplashPageState extends State<MySplashPage> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      var route = MaterialPageRoute(builder: (context) => const MyHomePage());
+      // var route = MaterialPageRoute(builder: (context) => const MyHomePage());
       //Navigator.push(context, route);
       // Navigator.pushAndRemoveUntil(context, route, (route) => false);
-      Navigator.pushReplacement(context, route);
+      // Navigator.pushReplacement(context, route);
+      Navigator.pushReplacementNamed(context, MyAppRoutes.pageLogin);
     });
   }
 

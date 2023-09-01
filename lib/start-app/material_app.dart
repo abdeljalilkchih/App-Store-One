@@ -34,7 +34,8 @@ class _MyMaterialAppState extends State<MyMaterialApp> {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: const MyLoginPage(),
+      initialRoute: MyAppRoutes.connectionFirebase,
+      routes: MyAppRoutes.routes,
     );
   }
 }

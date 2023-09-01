@@ -33,21 +33,31 @@ class MyForgetPagePassword extends StatelessWidget {
                 MyAppDime.spaceAuth,
 
                 /// [MyAuthButton] custom button for auth
-                MyAuthButton(
-                    myTitle: MyAppLangKey.resetPassword,
-                    onMyClick: () {
-                      if (myFormKeyForget.currentState?.validate() ?? false) {
-                        dev.log('Form Validate is True',
-                            name: 'Form Validate Forget');
-                        // active function save include textFormField
-                        myFormKeyForget.currentState?.save();
-                        dev.log(authForget.myDataUserAuth.toString(),
-                            name: 'Form Validate Forget');
-                      } else {
-                        dev.log('Form Validate is false',
-                            name: 'Form Validate Forget');
-                      }
-                    }),
+                authForget.loading
+                    ? const Center(child: CircularProgressIndicator())
+                    : MyAuthButton(
+                        myTitle: MyAppLangKey.resetPassword,
+                        onMyClick: () async {
+                          try {
+                            if (myFormKeyForget.currentState?.validate() ??
+                                false) {
+                              dev.log('Form Validate is True',
+                                  name: 'Form Validate Forget');
+                              // active function save include textFormField
+                              myFormKeyForget.currentState?.save();
+                              dev.log(authForget.myDataUserAuth.toString(),
+                                  name: 'Form Validate Forget');
+                              await authForget.resetMyPass();
+                              dev.log('reset password 😎');
+                            } else {
+                              dev.log('Form Validate is false',
+                                  name: 'Form Validate Forget');
+                            }
+                          } catch (e) {
+                            dev.log('error : ${e.toString()}',
+                                name: 'reset pass');
+                          }
+                        }),
 
                 /// [AuthFooter]
                 MyAuthFooter(

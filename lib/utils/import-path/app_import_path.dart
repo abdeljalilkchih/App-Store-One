@@ -1,4 +1,7 @@
 import 'dart:async';
+import 'dart:io';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -67,6 +70,8 @@ part '../language/app_lang.dart';
 part '../language/app_lang_key.dart';
 part '../restart/app_restart.dart';
 part '../validator/app_validator.dart';
+part '../routes/app_routes.dart';
+part '../firebase/connection_firebase.dart';
 
 /// part Api
 part '../../api/api_key.dart';

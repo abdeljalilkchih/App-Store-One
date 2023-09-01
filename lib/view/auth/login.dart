@@ -5,7 +5,7 @@ class MyLoginPage extends StatelessWidget {
   static GlobalKey<FormState> myFormKeyLogin = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    MyControllerAuth authEmail = Provider.of<MyControllerAuth>(context);
+    MyControllerAuth authLogin = Provider.of<MyControllerAuth>(context);
     return Scaffold(
         appBar: const MyAuthAppBar(),
         body: SingleChildScrollView(
@@ -31,21 +31,35 @@ class MyLoginPage extends StatelessWidget {
                 const MyAuthForgotPass(),
 
                 /// [MyAuthButton] custom button for auth
-                MyAuthButton(
-                    myTitle: MyAppLangKey.login,
-                    onMyClick: () {
-                      if (myFormKeyLogin.currentState?.validate() ?? false) {
-                        dev.log('Form Validate is True',
-                            name: 'Form Validate Login');
-                        // active function save include textFormField
-                        myFormKeyLogin.currentState?.save();
-                        dev.log(authEmail.myDataUserAuth.toString(),
-                            name: 'Form Validate Login');
-                      } else {
-                        dev.log('Form Validate is false',
-                            name: 'Form Validate Login');
-                      }
-                    }),
+                authLogin.loading
+                    ? const Center(child: CircularProgressIndicator())
+                    : MyAuthButton(
+                        myTitle: MyAppLangKey.login,
+                        onMyClick: () async {
+                          try {
+                            if (myFormKeyLogin.currentState?.validate() ??
+                                false) {
+                              dev.log('Form Validate is True',
+                                  name: 'Form Validate Login');
+
+                              // active function save include textFormField
+                              myFormKeyLogin.currentState?.save();
+                              dev.log(authLogin.myDataUserAuth.toString(),
+                                  name: 'Form Validate Login');
+                              if (await authLogin.signInMyAuth() != null) {
+                                dev.log('login account successfully 😎');
+                              } else {
+                                dev.log(authLogin.errorMessage,
+                                    name: 'when login account 🥲');
+                              }
+                            } else {
+                              dev.log('Form Validate is false',
+                                  name: 'Form Validate Login');
+                            }
+                          } catch (e) {
+                            dev.log('error : ${e.toString()}', name: 'login');
+                          }
+                        }),
 
                 /// [AuthFooter]
                 MyAuthFooter(
@@ -64,8 +78,9 @@ class MyLoginPage extends StatelessWidget {
 
   /// [myNavigatorRegister]
   void myNavigatorRegister(BuildContext context) {
-    MaterialPageRoute route =
-        MaterialPageRoute(builder: (context) => const MyRegisterPage());
-    Navigator.push(context, route);
+    // MaterialPageRoute route =
+    //     MaterialPageRoute(builder: (context) => const MyRegisterPage());
+    // Navigator.push(context, route);
+    Navigator.pushNamed(context, MyAppRoutes.pageRegister);
   }
 }

@@ -5,7 +5,7 @@ class MyRegisterPage extends StatelessWidget {
   static GlobalKey<FormState> myFormKeyRegister = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    MyControllerAuth authRegister = Provider.of<MyControllerAuth>(context);
+    MyControllerAuth myAuthRegister = Provider.of<MyControllerAuth>(context);
     return Scaffold(
         appBar: const MyAuthAppBar(),
         body: SingleChildScrollView(
@@ -35,21 +35,38 @@ class MyRegisterPage extends StatelessWidget {
                 ),
 
                 /// [MyAuthButton] custom button for auth
-                MyAuthButton(
-                    myTitle: MyAppLangKey.register,
-                    onMyClick: () {
-                      if (myFormKeyRegister.currentState?.validate() ?? false) {
-                        dev.log('Form Validate is True',
-                            name: 'Form Validate Register');
-                        // active function save include textFormField
-                        myFormKeyRegister.currentState?.save();
-                        dev.log(authRegister.myDataUserAuth.toString(),
-                            name: 'Form Validate Register');
-                      } else {
-                        dev.log('Form Validate is false',
-                            name: 'Form Validate Register');
-                      }
-                    }),
+                /// [AuthButton] custom button for auth
+                myAuthRegister.loading
+                    ? const Center(child: CircularProgressIndicator())
+                    : MyAuthButton(
+                        myTitle: MyAppLangKey.register,
+                        onMyClick: () async {
+                          try {
+                            if (myFormKeyRegister.currentState?.validate() ??
+                                false) {
+                              dev.log('Form Validate is True',
+                                  name: 'Form Validate Register');
+                              // active function save include textFormField
+                              myFormKeyRegister.currentState?.save();
+                              dev.log(myAuthRegister.myDataUserAuth.toString(),
+                                  name: 'Form Validate Register');
+                              if (await myAuthRegister.signInMyAuth(
+                                      isLogin: false) !=
+                                  null) {
+                                dev.log('create account successfully 😎');
+                              } else {
+                                dev.log(myAuthRegister.errorMessage,
+                                    name: 'when create new account  🥲');
+                              }
+                            } else {
+                              dev.log('Form Validate is false',
+                                  name: 'Form Validate Register');
+                            }
+                          } catch (e) {
+                            dev.log('error : ${e.toString()}',
+                                name: 'My Register Page');
+                          }
+                        }),
 
                 /// [AuthFooter]
                 MyAuthFooter(

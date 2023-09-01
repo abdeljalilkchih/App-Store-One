@@ -27,6 +27,9 @@ dependencies:
   http: ^1.1.0
   # Validate Forms
   validators: ^3.0.0
+  # Firebase Packages
+  firebase_core: ^2.15.1
+  firebase_auth: ^4.7.3
 
 dev_dependencies:
   flutter_test:

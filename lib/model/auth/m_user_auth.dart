@@ -1,15 +1,16 @@
 part of '../../utils/import-path/app_import_path.dart';
 
 class MyModelUserAuth {
-  String? email;
-  String? password;
+  String? myEmail;
+  String? myPassword;
 
-  MyModelUserAuth({this.email, this.password});
+  MyModelUserAuth({this.myEmail, this.myPassword});
 
-  void setMyEmail(String? value) => email = value;
+  void setMyEmail(String? value) => myEmail = value;
 
-  void setMyPass(String? value) => password = value;
+  void setMyPass(String? value) => myPassword = value;
 
   @override
-  String toString() => 'ModelUserAuth(email: $email, password: $password)';
+  String toString() =>
+      'ModelUserAuth(MyEmail: $myEmail, MyPassword: $myPassword)';
 }

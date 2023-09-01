@@ -22,4 +22,81 @@ class MyControllerAuth extends ChangeNotifier {
 
   /// [myCurrentPass] used to save password before match with confirm pass
   String myCurrentPass = '';
+
+  /// ------------------ Firebase ----------------------
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  bool loading = false;
+  String errorMessage = '';
+
+  /// [changeMyLoading] change value loading
+  set changeMyLoading(bool value) {
+    loading = value;
+    notifyListeners();
+  }
+
+  /// [setMyMessage] handle error auth
+  set setMyMessage(String value) {
+    errorMessage = value;
+    notifyListeners();
+  }
+
+  /// [signInMyAuth]  sign and register (create new account)
+  Future<User?> signInMyAuth({bool isLogin = true}) async {
+    try {
+      // run loading
+      changeMyLoading = true;
+      UserCredential userCredential = isLogin
+          // login
+          ? await firebaseAuth.signInWithEmailAndPassword(
+              email: myDataUserAuth.myEmail!,
+              password: myDataUserAuth.myPassword!)
+          :
+          // register
+          await firebaseAuth.createUserWithEmailAndPassword(
+              email: myDataUserAuth.myEmail!,
+              password: myDataUserAuth.myPassword!);
+      if (userCredential.user != null) {
+        // ✅
+        changeMyLoading = false;
+        return userCredential.user;
+      } else {
+        // ❌
+        changeMyLoading = false;
+        setMyMessage = tr(MyAppLangKey.notAccount);
+        return null;
+      }
+    } on SocketException {
+      changeMyLoading = false;
+      setMyMessage = MyAppLangKey.noInternet.tr();
+      return null;
+    } on FirebaseAuthException catch (error) {
+      changeMyLoading = false;
+      setMyMessage = error.message ?? '';
+      return null;
+    }
+    // General
+    catch (e) {
+      changeMyLoading = false;
+      setMyMessage = e.toString();
+      return null;
+    }
+  }
+
+  /// [resetMyPass] send email resent passwords
+  Future<void> resetMyPass() async {
+    try {
+      changeMyLoading = true;
+      await firebaseAuth.sendPasswordResetEmail(email: myDataUserAuth.myEmail!);
+      changeMyLoading = false;
+    } on SocketException {
+      changeMyLoading = false;
+      setMyMessage = MyAppLangKey.noInternet.tr();
+    } on FirebaseAuthException catch (error) {
+      changeMyLoading = false;
+      setMyMessage = error.message ?? '';
+    } catch (e) {
+      changeMyLoading = false;
+      setMyMessage = e.toString();
+    }
+  }
 }
