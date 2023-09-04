@@ -30,6 +30,8 @@ dependencies:
   # Firebase Packages
   firebase_core: ^2.15.1
   firebase_auth: ^4.7.3
+  # Read More
+  readmore: ^2.2.0
 
 dev_dependencies:
   flutter_test:

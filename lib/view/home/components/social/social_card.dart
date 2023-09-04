@@ -6,7 +6,11 @@ class MySocialCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        MaterialPageRoute route = MaterialPageRoute(
+            builder: (context) => MyDetailsPage(myData: myData));
+        Navigator.push(context, route);
+      },
       child: GridTile(
         // box black
         footer: Card(

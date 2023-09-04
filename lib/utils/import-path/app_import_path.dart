@@ -14,6 +14,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:readmore/readmore.dart';
 // import give alias name
 import 'dart:developer' as dev;
 import 'package:http/http.dart' as http;
@@ -27,6 +28,8 @@ part '../../view/webview/body.dart';
 part '../../view/auth/login.dart';
 part '../../view/auth/forget.dart';
 part '../../view/auth/register.dart';
+part '../../view/auth/wrapper.dart';
+part '../../view/details/body.dart';
 
 // part Widgets
 part '../../widgets/appbar_home.dart';
@@ -48,6 +51,7 @@ part '../../view/auth/widgets/auth_forget.dart';
 part '../../view/auth/widgets/auth_text_form_field.dart';
 part '../../view/auth/widgets/auth_email.dart';
 part '../../view/auth/widgets/auth_pass.dart';
+part '../../widgets/alert/alert_logout.dart';
 
 // part controller
 part '../../controllers/c_theme.dart';
@@ -93,3 +97,7 @@ part '../../view/home/components/social/social_tab.dart';
 part '../../view/home/components/premium/premium_tab.dart';
 part '../../view/home/components/premium/premium_card.dart';
 part '../../view/home/components/premium/premium_card_category.dart';
+part '../../view/details/components/d_appbar.dart';
+part '../../view/details/components/d_card_info.dart';
+part '../../view/details/components/d_header.dart';
+part '../../view/details/components/d_description.dart';

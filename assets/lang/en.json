@@ -60,5 +60,8 @@
   "somethingWrong": "Something went wrong",
   "emptyDownloaded": "There are no downloaded applications",
   "errorPrice": "The application price cannot be zero",
-  "noInternet": "No internet, please connect to the internet"
+  "noInternet": "No internet, please connect to the internet",
+  "description": "Description",
+  "showLess": "show less",
+  "readMore": "read more"
 }

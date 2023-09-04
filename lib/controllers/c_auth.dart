@@ -24,7 +24,7 @@ class MyControllerAuth extends ChangeNotifier {
   String myCurrentPass = '';
 
   /// ------------------ Firebase ----------------------
-  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  FirebaseAuth myFirebaseAuth = FirebaseAuth.instance;
   bool loading = false;
   String errorMessage = '';
 
@@ -47,12 +47,12 @@ class MyControllerAuth extends ChangeNotifier {
       changeMyLoading = true;
       UserCredential userCredential = isLogin
           // login
-          ? await firebaseAuth.signInWithEmailAndPassword(
+          ? await myFirebaseAuth.signInWithEmailAndPassword(
               email: myDataUserAuth.myEmail!,
               password: myDataUserAuth.myPassword!)
           :
           // register
-          await firebaseAuth.createUserWithEmailAndPassword(
+          await myFirebaseAuth.createUserWithEmailAndPassword(
               email: myDataUserAuth.myEmail!,
               password: myDataUserAuth.myPassword!);
       if (userCredential.user != null) {
@@ -86,7 +86,8 @@ class MyControllerAuth extends ChangeNotifier {
   Future<void> resetMyPass() async {
     try {
       changeMyLoading = true;
-      await firebaseAuth.sendPasswordResetEmail(email: myDataUserAuth.myEmail!);
+      await myFirebaseAuth.sendPasswordResetEmail(
+          email: myDataUserAuth.myEmail!);
       changeMyLoading = false;
     } on SocketException {
       changeMyLoading = false;
@@ -99,4 +100,12 @@ class MyControllerAuth extends ChangeNotifier {
       setMyMessage = e.toString();
     }
   }
+
+  /// [signMeOut] logout
+  Future<void> signMeOut() async {
+    await myFirebaseAuth.signOut();
+  }
+
+  /// userState check user and return data -> id or email or photo
+  Stream<User?> get myUserState => myFirebaseAuth.authStateChanges();
 }

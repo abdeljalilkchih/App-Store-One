@@ -37,7 +37,11 @@ class MyDrawerSetting extends StatelessWidget {
           MyDrawerSettingDesign(
             myTitle: MyAppLangKey.logout,
             myIcon: MyAppMedia.logout,
-            myOnTap: () {},
+            myOnTap: () => showDialog(
+              barrierDismissible: false,
+              context: context,
+              builder: (context) => const MyAlertLogout(),
+            ),
           )
         ]));
   }

@@ -44,6 +44,9 @@ class MyAppLangKey {
   static const String download = 'download';
   static const String megabyte = 'megabyte';
   static const String jd = 'jd';
+  static const String description = 'description';
+  static const String showLess = 'showLess';
+  static const String readMore = 'readMore';
 
   // * Alert
   static const String ok = 'ok';
