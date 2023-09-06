@@ -32,6 +32,11 @@ dependencies:
   firebase_auth: ^4.7.3
   # Read More
   readmore: ^2.2.0
+  # Sqlflite 
+  sqflite: ^2.3.0
+  # Path Provider
+  path_provider: ^2.1.1
+
 
 dev_dependencies:
   flutter_test:

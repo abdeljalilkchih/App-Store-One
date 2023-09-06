@@ -15,11 +15,14 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:readmore/readmore.dart';
+import 'package:sqflite/sqflite.dart';
 // import give alias name
 import 'dart:developer' as dev;
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 import 'package:validators/validators.dart' as validators;
+import 'package:path_provider/path_provider.dart' as dir;
+import 'package:path/path.dart' as path;
 
 // part views
 part '../../view/splash/body.dart';
@@ -30,6 +33,7 @@ part '../../view/auth/forget.dart';
 part '../../view/auth/register.dart';
 part '../../view/auth/wrapper.dart';
 part '../../view/details/body.dart';
+part '../../view/my-app/body.dart';
 
 // part Widgets
 part '../../widgets/appbar_home.dart';
@@ -58,6 +62,7 @@ part '../../controllers/c_theme.dart';
 part '../../controllers/c_language.dart';
 part '../../controllers/c_api.dart';
 part '../../controllers/c_auth.dart';
+part '../../controllers/c_db.dart';
 
 // part start app
 part '../../start-app/start_app.dart';
@@ -101,3 +106,10 @@ part '../../view/details/components/d_appbar.dart';
 part '../../view/details/components/d_card_info.dart';
 part '../../view/details/components/d_header.dart';
 part '../../view/details/components/d_description.dart';
+part '../../view/my-app/components/card_myapp.dart';
+
+/// DataBase
+part '../database/table/t_app.dart';
+part '../database/model/m_db_app.dart';
+part '../database/init-db/init_db.dart';
+part '../database/build/b_query_app.dart';

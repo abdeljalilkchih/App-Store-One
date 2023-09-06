@@ -8,15 +8,15 @@ class MyPremiumTab extends StatefulWidget {
 }
 
 class _MyPremiumTabState extends State<MyPremiumTab> {
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration.zero, () {
-      MyControllerAPI myApi =
-          Provider.of<MyControllerAPI>(context, listen: false);
-      myApi.fetchDataPremium(context);
-    });
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   Future.delayed(Duration.zero, () {
+  //     MyControllerAPI myApi =
+  //         Provider.of<MyControllerAPI>(context, listen: false);
+  //     myApi.fetchDataPremium(context);
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {

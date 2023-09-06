@@ -9,6 +9,7 @@ class MyAppRoutes {
   static const String pageRegister = 'MyRegisterPage';
   static const String connectionFirebase = 'MyFireBaseConnection';
   static const String wrapper = 'MyWrapper';
+  static const String myApp = 'MyPageMyApp';
 
   /// [routes] project all page
   static Map<String, WidgetBuilder> routes = {
@@ -18,5 +19,6 @@ class MyAppRoutes {
     pageForgotPass: (context) => const MyForgetPagePassword(),
     connectionFirebase: (context) => const MyFireBaseConnection(),
     wrapper: (context) => const MyWrapper(),
+    myApp: (context) => const MyPageMyApp(),
   };
 }

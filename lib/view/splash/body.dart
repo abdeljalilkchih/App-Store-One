@@ -11,8 +11,13 @@ class _MySplashPageState extends State<MySplashPage> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, MyAppRoutes.wrapper);
+    Future.delayed(Duration.zero, () {
+      MyControllerAPI myApi =
+          Provider.of<MyControllerAPI>(context, listen: false);
+      myApi.cacheStorageData(context);
+      Timer(const Duration(seconds: 3), () {
+        Navigator.pushReplacementNamed(context, MyAppRoutes.wrapper);
+      });
     });
   }
 

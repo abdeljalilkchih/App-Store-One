@@ -13,6 +13,7 @@ class MyAppBarHome extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           onPressed: () {
+            Navigator.pushNamed(context, MyAppRoutes.myApp);
             dev.log('My Click Action Icon', name: 'MyAppBarHome');
           },
           icon: SvgPicture.asset(

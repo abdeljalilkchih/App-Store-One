@@ -13,7 +13,9 @@ class MyDrawerSetting extends StatelessWidget {
           MyDrawerSettingDesign(
             myTitle: MyAppLangKey.myApps,
             myIcon: MyAppMedia.myApp,
-            myOnTap: () {},
+            myOnTap: () {
+              Navigator.pushNamed(context, MyAppRoutes.myApp);
+            },
           ),
           // Language
           const MyDrawerSettingDesign(

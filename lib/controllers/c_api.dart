@@ -43,4 +43,11 @@ class MyControllerAPI extends ChangeNotifier {
     // update data in UI
     notifyListeners();
   }
+
+  Future<void> cacheStorageData(context) async {
+    /// storage data from API
+    myDataSocial = await MyApi().getMySocial(context);
+    // storage data from Api
+    myDataPremium = await MyApi().getMyPremium(context);
+  }
 }

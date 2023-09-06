@@ -8,16 +8,16 @@ class MySocialTab extends StatefulWidget {
 }
 
 class _MySocialTabState extends State<MySocialTab> {
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration.zero, () {
-      /// provider api
-      MyControllerAPI myApi =
-          Provider.of<MyControllerAPI>(context, listen: false);
-      myApi.fetchDataSocial(context);
-    });
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   Future.delayed(Duration.zero, () {
+  //     /// provider api
+  //     MyControllerAPI myApi =
+  //         Provider.of<MyControllerAPI>(context, listen: false);
+  //     myApi.fetchDataSocial(context);
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
