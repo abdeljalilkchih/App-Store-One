@@ -16,7 +16,7 @@ class MyDetailsCardInfo extends StatelessWidget {
             Icon(myIcon),
 
             // Text
-            Text(myTitle),
+            Text(myTitle, style: GoogleFonts.racingSansOne()),
           ],
         ),
       ),

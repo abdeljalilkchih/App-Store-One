@@ -56,7 +56,7 @@ part '../../view/auth/widgets/auth_text_form_field.dart';
 part '../../view/auth/widgets/auth_email.dart';
 part '../../view/auth/widgets/auth_pass.dart';
 part '../../widgets/alert/alert_logout.dart';
-
+part '../../widgets/alert/alert_delete.dart';
 // part controller
 part '../../controllers/c_theme.dart';
 part '../../controllers/c_language.dart';

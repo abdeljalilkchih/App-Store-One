@@ -63,5 +63,6 @@
   "noInternet": "لا يوجد إنترنت ، يرجى الاتصال بالإنترنت",
   "description": "وصف",
   "showLess": "اقرأ أقل",
-  "readMore": "اقرأ أكثر"
+  "readMore": "اقرأ أكثر",
+  "delete": "حذف"
 }

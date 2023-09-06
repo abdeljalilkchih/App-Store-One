@@ -5,7 +5,7 @@ class MyAppCard extends StatelessWidget {
   final MyModelDBApp myData;
   @override
   Widget build(BuildContext context) {
-    MyControllerDB myDatabase = Provider.of<MyControllerDB>(context);
+    //MyControllerDB myDatabase = Provider.of<MyControllerDB>(context);
     return Container(
       height: (MyAppDime.xxxl / 1.3).h,
       margin: EdgeInsets.all(MyAppDime.md.w),
@@ -77,9 +77,13 @@ class MyAppCard extends StatelessWidget {
           Expanded(
             child: IconButton(
               onPressed: () async {
-                if (await myDatabase.unInstallApp(myData)) {
-                  myDatabase.dataList?.remove(myData);
-                }
+                showDialog(
+                  barrierDismissible: false,
+                  context: context,
+                  builder: (context) => MyAlertDelete(
+                    myData: myData,
+                  ),
+                );
               },
               icon: Icon(
                 Platform.isAndroid ? Icons.delete : CupertinoIcons.delete,

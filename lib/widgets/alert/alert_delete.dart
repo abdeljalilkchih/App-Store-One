@@ -1,16 +1,16 @@
 part of '../../utils/import-path/app_import_path.dart';
 
-class MyAlertLogout extends StatelessWidget {
-  const MyAlertLogout({super.key});
-
+class MyAlertDelete extends StatelessWidget {
+  const MyAlertDelete({super.key, required this.myData});
+  final MyModelDBApp myData;
   @override
   Widget build(BuildContext context) {
-    /// [auth] is provider handle change state show password
-    MyControllerAuth authLogoutAlert = Provider.of<MyControllerAuth>(context);
+    MyControllerDB myDatabase = Provider.of<MyControllerDB>(context);
+
     return AlertDialog.adaptive(
-      title: Text('${MyAppLangKey.logout.tr()} ?',
-          style: GoogleFonts.racingSansOne()),
-      content: Text(MyAppLangKey.messageLogout.tr(),
+      title:
+          Text('Delete ${myData.name} ?', style: GoogleFonts.racingSansOne()),
+      content: Text('Are you sure to Delete ${myData.name} app ??',
           style: GoogleFonts.racingSansOne()),
       actions: [
         // cancel
@@ -23,13 +23,15 @@ class MyAlertLogout extends StatelessWidget {
         ),
         // logout
         OutlinedButton(
-          onPressed: () {
-            authLogoutAlert.signMeOut();
+          onPressed: () async {
+            if (await myDatabase.unInstallApp(myData)) {
+              myDatabase.dataList?.remove(myData);
+            }
             Navigator.pop(context);
           },
-          child: Text(MyAppLangKey.logout.tr(),
+          child: Text(MyAppLangKey.delete.tr(),
               style: GoogleFonts.racingSansOne()),
-        ),
+        )
       ],
       actionsAlignment: MainAxisAlignment.spaceAround,
     );

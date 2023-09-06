@@ -8,7 +8,10 @@ class MyDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
     /// [database] provider  db
     MyControllerDB myDatabase = Provider.of<MyControllerDB>(context);
     return AppBar(
-      title: Text('${myData.nameApp}'),
+      title: Text(
+        '${myData.nameApp}',
+        style: GoogleFonts.racingSansOne(),
+      ),
       centerTitle: true,
       actions: [
         Padding(
@@ -18,7 +21,7 @@ class MyDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
               await myDatabase
                   .manageInstallation(myDatabase.convertTypeDB(myData));
             },
-            child: Text(myDatabase.myTitleBtn?.tr() ?? ''),
+            child: Text(myDatabase.myTitleBtn?.tr() ?? 'install'),
           ),
         )
       ],

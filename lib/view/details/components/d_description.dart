@@ -13,7 +13,8 @@ class MyDetailsDescription extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // header
-          Text('${MyAppLangKey.description.tr()}:'),
+          Text('${MyAppLangKey.description.tr()}:',
+              style: GoogleFonts.racingSansOne()),
           MyAppDime.l.verticalSpace,
           ReadMoreText(
             '${myData.description}',

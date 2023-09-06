@@ -63,5 +63,6 @@
   "noInternet": "No internet, please connect to the internet",
   "description": "Description",
   "showLess": "show less",
-  "readMore": "read more"
+  "readMore": "read more",
+  "delete": "Delete"
 }

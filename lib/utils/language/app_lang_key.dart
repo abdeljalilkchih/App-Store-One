@@ -96,4 +96,5 @@ class MyAppLangKey {
 
   // * Internet
   static const String noInternet = 'noInternet';
+  static const String delete = 'delete';
 }
